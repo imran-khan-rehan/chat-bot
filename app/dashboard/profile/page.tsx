@@ -16,7 +16,7 @@ export default function ProfilePage() {
     apiKey: '',
     domain: ''
   });
-  const [chatUrl, setUrl] = useState<string>(null);
+  const [chatUrl, setUrl] = useState<string>('');
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setProfile(prev => ({ ...prev, [name]: value }));
@@ -55,9 +55,10 @@ export default function ProfilePage() {
     }
   };
   useEffect(() => {
-    const url =localStorage.getItem("url"); 
-    setUrl(url)
+    const url = localStorage.getItem("url") || ''; 
+    setUrl(url);
   }, []);
+  
 
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 w-100">
