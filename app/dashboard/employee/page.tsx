@@ -163,7 +163,7 @@ export default function Page() {
   const handleDelete = async () => {
     if (token && selectedDocument) {
       try {
-        await deleteDocument(token, selectedDocument.id);
+        await deleteDocument(token, selectedDocument.id.toString());
         setDocuments(prevDocuments => prevDocuments.filter(doc => doc.id !== selectedDocument.id));
         setError(null);
         setIsDeleteModalOpen(false); // Close the modal after deletion
