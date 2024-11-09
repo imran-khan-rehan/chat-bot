@@ -5,7 +5,11 @@ import { Input } from "@/components/ui/input"
 import { Link, Check, Copy } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
-export default function Component({ chatUrl }) {
+interface ComponentProps {
+  chatUrl: string;
+}
+
+export default function Component({ chatUrl }: ComponentProps) {
   const [copied, setCopied] = useState(false)
 
   const copyToClipboard = async () => {

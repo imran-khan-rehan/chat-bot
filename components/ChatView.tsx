@@ -66,7 +66,7 @@ export default function ChatView({ userId }: ChatViewProps) {
       setIsTyping(true);
 
       try {
-        const aiResponse = await queryChatbot(parseInt(userId), newMessage.text, sessionId);
+        const aiResponse = await queryChatbot(parseInt(userId), newMessage.text, sessionId.toString());
         const aiMessage: Message = { id: Date.now(), text: aiResponse.answer, sender: 'ai' };
         setMessages((prev) => [...prev, aiMessage]);
         setIsTyping(false);

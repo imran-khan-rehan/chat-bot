@@ -1,6 +1,6 @@
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-import ColorHash from "color-hash";
+// import dayjs from "dayjs";
+// import relativeTime from "dayjs/plugin/relativeTime";
+// import ColorHash from "color-hash";
 
 // convert a file into base64 string
 export const convertToBase64 = async (file: File): Promise<string> => {
@@ -19,17 +19,17 @@ export const convertToBase64 = async (file: File): Promise<string> => {
 };
 
 // format date and time relative to current time
-dayjs.extend(relativeTime);
-export const formatRelativeTime = (date: string | Date): string => {
-  const dateTime = dayjs(date);
-  const now = dayjs();
+// dayjs.extend(relativeTime);
+// export const formatRelativeTime = (date: string | Date): string => {
+//   const dateTime = dayjs(date);
+//   const now = dayjs();
 
-  if (now.diff(dateTime, "minute") < 1) {
-    return "just now";
-  }
+//   if (now.diff(dateTime, "minute") < 1) {
+//     return "just now";
+//   }
 
-  return dateTime.fromNow();
-};
+//   return dateTime.fromNow();
+// };
 
 // format time in minutes and seconds
 export const formatTime = (seconds: number): string => {
@@ -41,7 +41,7 @@ export const formatTime = (seconds: number): string => {
 };
 
 // generate a random color based on given string
-export const getColorHash = (str: string): string => {
-  const colorHash = new ColorHash({ lightness: [0.35, 0.5, 0.65] });
-  return colorHash.hex(str);
-};
+// export const getColorHash = (str: string): string => {
+//   const colorHash = new ColorHash({ lightness: [0.35, 0.5, 0.65] });
+//   return colorHash.hex(str);
+// };
